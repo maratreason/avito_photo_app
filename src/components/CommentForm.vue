@@ -34,9 +34,13 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 form {
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 970px) {
+        padding: 0 20px;
+    }
 }
 </style>

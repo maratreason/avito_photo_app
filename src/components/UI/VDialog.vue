@@ -36,6 +36,18 @@ export default {
     padding: 20px;
     position: relative;
 
+    @media (max-width: 970px) {
+        flex-wrap: wrap;
+        width: 100%;
+        height: auto;
+        margin: auto 30px;
+        padding: 0;
+    }
+
+    @media (max-width: 755px) {
+        margin: 0
+    }
+
     .dialog__close {
         /* content: "x" */
         position: absolute;
@@ -44,6 +56,14 @@ export default {
         width: 20px;
         height: 20px;
         cursor: pointer;
+        z-index: 20;
+
+        @media (max-width: 970px) {
+            width: 40px;
+            height: 40px;
+            font-size: 2rem;
+            right: 0;
+        }
     }
 }
 </style>

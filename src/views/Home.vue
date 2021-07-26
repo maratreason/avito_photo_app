@@ -9,6 +9,9 @@
                     <div class="dialog-main">
                         <img class="dialog-main__img" :src="bigPicture.url" :alt="bigPicture.url" />
                         <comment-form @create="createComment" />
+                        <div class="mobile-comments">
+                            <dialog-comments v-for="comment in bigPicture.comments" :key="comment.id" :comment="comment" />
+                        </div>
                     </div>
                     <div class="dialog-comments">
                         <dialog-comments v-for="comment in bigPicture.comments" :key="comment.id" :comment="comment" />
@@ -61,7 +64,8 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-    width: 1000px;
+    max-width: 1000px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -86,20 +90,50 @@ export default {
     }
 }
 
+.dialog-block {
+    
+}
+
 .dialog-main {
     width: 640px;
     position: relative;
+
+    @media (max-width: 970px) {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-bottom: 30px;
+    }
 
     &__img {
         max-width: 100%;
         height: 400px;
         width: 600px;
         margin-bottom: 20px;
+        order: -2;
+        @media (max-width: 970px) {
+            width: 100%;
+            height: auto;
+        }
     }
 }
 
 .dialog-comments {
     width: 250px;
     margin-left: 20px;
+    @media (max-width: 970px) {
+        display: none;
+    }
+}
+
+.mobile-comments {
+    display: none;
+
+    @media (max-width: 970px) {
+        display: block;
+        width: 100%;
+        order: -1;
+        padding: 0 20px;
+    }
 }
 </style>

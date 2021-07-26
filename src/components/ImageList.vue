@@ -48,5 +48,9 @@ export default {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    @media (max-width: 962px) {
+        justify-content: space-around;
+    }
 }
 </style>

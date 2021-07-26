@@ -16,12 +16,16 @@ export default {
 <style lang="scss" scoped>
 .image {
     max-width: 100%;
-    height: 214px;
+    width: 320px;
     border-radius: 10px;
     margin-bottom: 15px;
     cursor: pointer;
     transition: all ease 0.3s;
     box-shadow: 1px 4px 7px rgba(#000, 0.3);
+
+    @media (max-width: 962px) {
+        width: 400px;
+    }
 
     &:hover {
         transform: translateY(-2px);
